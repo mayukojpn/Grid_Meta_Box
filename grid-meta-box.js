@@ -1,7 +1,8 @@
 jQuery(function($) {
 
-  $( "#normal-sortables" ).append( $( "<div class='gutter-sizer'></div>" ).css({"width": "2%"}) );
-  $( "#normal-sortables" ).append( $( "<div class='box-sizer'></div>" ).css({"width": "32%", "min-width": "205px"}) );
+  $( "#normal-sortables" )
+    .append( $( "<div class='gutter-sizer'></div>" ).css({"width": "2%"}) )
+    .append( $( "<div class='box-sizer'></div>" ).css({"width": "32%", "min-width": "205px"}) );
   $( "#normal-sortables > .postbox" )
     .css({
       "width": "32%",
@@ -11,17 +12,13 @@ jQuery(function($) {
     });
 
     var postbox = $( "#normal-sortables > .postbox" ),
+        postbox_container = $( "#normal-sortables" ),
         options = {attributes: true, attributeFilter: ["class"]},
         mo = new MutationObserver(grid_meta_box_run);
 
         for(var i=0;i<postbox.length;i++){
           mo.observe(postbox[i], options);
         }
-
-
-
-
-    $('#mutable')
 
   function grid_meta_box_run ()
   {
