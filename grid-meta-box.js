@@ -1,9 +1,9 @@
 jQuery(function($) {
 
-  $( "#normal-sortables" )
+  $( "#postbox-container-2 > #normal-sortables" )
     .append( $( "<div class='gutter-sizer'></div>" ).css({"width": "2%"}) )
     .append( $( "<div class='box-sizer'></div>" ).css({"width": "32%", "min-width": "205px"}) );
-  $( "#normal-sortables > .postbox" )
+  $( "#postbox-container-2 > #normal-sortables > .postbox" )
     .css({
       "width": "32%",
       "box-sizing": "border-box",
@@ -11,8 +11,8 @@ jQuery(function($) {
       "float": "left"
     });
 
-    var postbox = $( "#normal-sortables > .postbox" ),
-        postbox_container = $( "#normal-sortables" ),
+    var postbox = $( "#postbox-container-2 > #normal-sortables > .postbox" ),
+        postbox_container = $( "#postbox-container-2 > #normal-sortables" ),
         options = {attributes: true, attributeFilter: ["class"]},
         mo = new MutationObserver(grid_meta_box_run);
 
@@ -22,7 +22,7 @@ jQuery(function($) {
 
   function grid_meta_box_run ()
   {
-    $('#normal-sortables').masonry({
+    $('#postbox-container-2 > #normal-sortables').masonry({
       itemSelector: '.postbox',
       percentPosition: true,
       columnWidth: '.box-sizer',
